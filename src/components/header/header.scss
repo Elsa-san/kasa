@@ -1,8 +1,23 @@
 @import "../../sass/main.scss";
 
 .header{
+    display: flex;
+    justify-content: space-between;
     height: 68px;
     img{
         height: 70%;
     }
+}
+
+.nav {
+    display: inline;
+    cursor: pointer;
+    color: $color-secondary;
+    list-style: none;
+    font-size: 24px;
+    margin-left: 50px;
+    &:hover{
+        text-decoration: underline solid $color-secondary;
+    }
+
 }
