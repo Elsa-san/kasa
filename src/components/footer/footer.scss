@@ -1,0 +1,17 @@
+@import "../../sass/main.scss";
+
+.footer {
+    height: 209px;
+    background-color: black;
+    text-align: center;
+}
+
+.footer img {
+    padding-top: 50px;
+}
+
+.footer_copyright {
+    color: $color-primary;
+    font-size: 24px;
+    padding-top: 30px;
+}
