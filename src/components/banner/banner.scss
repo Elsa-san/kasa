@@ -1,8 +1,17 @@
 .banner {
     max-width: 1240px;
     height: 223px;
-    margin: 20px;
+    margin-left: 100px;
+    margin-bottom: 50px;
     border-radius: 25px;
-    background-image: url(../../assets/banner_img.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../assets/banner_img.png);
     background-position: center;
+}
+
+.banner-text {
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    padding-top: 80px;
+    font-family: "montserrat";
 }
