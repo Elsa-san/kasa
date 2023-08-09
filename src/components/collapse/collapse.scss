@@ -5,10 +5,35 @@
     margin-left: 20px;
     margin-right: 20px;
     max-width: 1100px;
-    min-height: 50px;
+    min-height: 30px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     cursor: pointer;
+
+    @include desktop {
+            min-height: 50px;
+    }
+
+    &_content {
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+    
+        &.open {
+            .collapse_content {
+                padding: 20px;
+                background-color: $color-tertiary;
+                color: $color-secondary;
+                height: auto;
+                opacity: 1;
+                line-height: 24px;
+            @include desktop {
+                margin-top: 10px;
+            }
+            }
+        }
 
     @include tablette {
         margin-left: 20px;
@@ -25,28 +50,17 @@
         padding: 10px 15px;
         color: $color-primary;
         font-weight: 500;
+        margin-bottom: 0;
+        margin-top: 20px;
         .arrow {
+        margin-top: 8px;
         max-height: 12px;
-        padding-top: 10px;
-        }
-    }
-
-    &_content {
-        height: 0;
-        opacity: 0;
-        transition: height 0.3s ease-out, opacity 0.3s ease-out
-}
-
+        transition: transform 0.5s ease-in-out;
         &.open {
-            .collapse_content {
-                padding: 20px;
-                background-color: $color-tertiary;
-                color: $color-secondary;
-                height: auto;
-                opacity: 1;
-                line-height: 24px;
-                transition: height 0.3s ease-out, opacity 0.3s ease-out;
+                transform: rotate(180deg);
+                margin-top: 8px;
             }
         }
+    }
   
 }

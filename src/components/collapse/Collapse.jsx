@@ -11,8 +11,7 @@ export default function Collapse({data}) {
     return (
         <div className={`collapse ${open ? 'open' : ''}`} onClick={toggleCollapse}>
             <h3 className='collapse_title'>{data.title}
-            <img className='arrow' src={arrow} alt="flèche"/></h3>
-            
+            <img className={`arrow ${open ? 'open' : ''}`} src={arrow} alt="flèche" /></h3>
             {open && <div className='collapse_content'>{data.content}</div>}
         </div>
     );

@@ -9,7 +9,7 @@ export default function Error() {
             <Header />
             <h1 className="error">404</h1>
             <p className="error-text">Oups! La page que vous recherchez n'existe pas</p>
-            <Link className="error-back" to="/">Retourner à la page d'accueil</Link>
+            <Link className="error-back" to="/">Retourner sur la page d'accueil</Link>
             <Footer />
 		</div>
 	)
