@@ -2,12 +2,22 @@
 
 .collapse {
     background-color: $color-secondary;
+    margin-left: 20px;
+    margin-right: 20px;
     max-width: 1100px;
-    margin: 0 auto;
     min-height: 50px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     cursor: pointer;
+
+    @include tablette {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    @include desktop {
+        margin: 0 auto;
+        }
     
     &_title {
         display: flex;
@@ -24,6 +34,7 @@
     &_content {
         height: 0;
         opacity: 0;
+        transition: height 0.3s ease-out, opacity 0.3s ease-out
 }
 
         &.open {
@@ -34,6 +45,7 @@
                 height: auto;
                 opacity: 1;
                 line-height: 24px;
+                transition: height 0.3s ease-out, opacity 0.3s ease-out;
             }
         }
   

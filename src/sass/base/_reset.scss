@@ -1,14 +1,12 @@
 body {
-    max-width: 1440px;
     margin: 0 auto;
     font-family: "montserrat";
-    @media screen and (max-width: 500px) {
-            padding-top: 20px;
-        }
+    font-style: normal;
 }
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 li {
