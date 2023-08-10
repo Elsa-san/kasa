@@ -4,15 +4,20 @@ import React, { useState } from 'react';
 
 
 export default function Collapse({data}) {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false) // Local state to control whether Collapse is open or closed
     const toggleCollapse = () => {
-        setOpen(!open)
+        setOpen(!open) //Collapse component with dynamic classes based on the "open" state
+
     }
     return (
-        <div className={`collapse ${open ? 'open' : ''}`} onClick={toggleCollapse}>
-            <h3 className='collapse_title'>{data.title}
-            <img className={`arrow ${open ? 'open' : ''}`} src={arrow} alt="flèche" /></h3>
-            {open && <div className='collapse_content'>{data.content}</div>}
+        <div className={`collapse ${open ? 'open' : ''}`}>
+            <h3 className='collapse_title' onClick={toggleCollapse}>
+                {data.title}
+            <img className={`arrow ${open ? 'open' : ''}`} src={arrow} alt="flèche" />
+            </h3>
+            <div className={`collapse_content ${open ? 'open' : ''}`}>
+                {data.content}
+            </div>
         </div>
     );
 }
