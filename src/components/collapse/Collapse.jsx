@@ -3,7 +3,7 @@ import arrow from '../../assets/arrow.png'
 import React, { useState } from 'react';
 
 
-export default function Collapse({data}) {
+export default function Collapse({content, title}) {
     const [open, setOpen] = useState(false) // Local state to control whether Collapse is open or closed
     const toggleCollapse = () => {
         setOpen(!open) //Collapse component with dynamic classes based on the "open" state
@@ -12,11 +12,11 @@ export default function Collapse({data}) {
     return (
         <div className={`collapse ${open ? 'open' : ''}`}>
             <h3 className='collapse_title' onClick={toggleCollapse}>
-                {data.title}
+                {title}
             <img className={`arrow ${open ? 'open' : ''}`} src={arrow} alt="flèche" />
             </h3>
             <div className={`collapse_content ${open ? 'open' : ''}`}>
-                {data.content}
+                {content}
             </div>
         </div>
     );

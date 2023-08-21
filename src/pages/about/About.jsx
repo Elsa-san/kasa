@@ -32,7 +32,11 @@ export default function About() {
         <Header />
         <Banner imageUrl={bannerAbout} showText={false} />
         {aboutDatas.map(data => (
-                <Collapse key={data.id} data={data} />
+               <Collapse
+                    key={data.id}
+                    title={data.title}
+                    content={data.content}
+                />
             ))}
         <Footer />
 		</div>
