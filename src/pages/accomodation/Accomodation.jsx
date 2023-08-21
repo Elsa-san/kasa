@@ -13,32 +13,45 @@ export default function Accomodation() {
 const idAccomodation = useParams('id').id;
 const dataCurrentAccomodation = datas.filter(data => data.id === idAccomodation)
 const rating = dataCurrentAccomodation[0].rating
+const name = dataCurrentAccomodation[0].host.name.split(' ')
 	
 	return (
 		<div>
         <Header />
 		<main className="accomodation">
+			<div className="accomodation_title">
 			<h1>{dataCurrentAccomodation[0].title}</h1>
+			<div className="accomodation_host">
+			<span>{name[0]}</span>
+			<span>{name[1]}</span>
+			<img className="picture" src={dataCurrentAccomodation[0].host.picture} alt="propriétaire de l'appartement" />
+            </div>
+			</div>
 			<p>{dataCurrentAccomodation[0].location}</p>
+			<div className="tag-container">
 			<div>
 			{dataCurrentAccomodation[0].tags.map((tag, index) => {
 			return (
 				<button className="tag" key={index}>{tag}</button>
 				)
 			})}
-			</div>
+			 </div>
 			<div className="stars"> {Array.from({ length: 5 }).map((_, index) => (
              <img
              key={index}
              src={index < rating ? ActiveStar : InactiveStar}
              alt="star"/>
              ))}
-             </div>
-                        
-		<div className="container-collapse">
-			<Collapse className="accomodation-collapse" title={"Description"} content={datas.description}/>
-			<Collapse title={"Equipements"} content={datas.equipments}/>
+			 </div>
+			</div>
 
+			<div className="accomodation-collapse">
+			<div className="accomodation-collapse_item">
+			<Collapse title={"Description"} content={dataCurrentAccomodation[0].description}/>
+			</div>
+			<div className="accomodation-collapse_item">
+			<Collapse title={"Equipements"} content={dataCurrentAccomodation[0].equipments}/>
+			</div>
 		</div>
 		</main>
         <Footer />

@@ -3,6 +3,8 @@ import Footer from "../../components/footer/Footer"
 import Banner from "../../components/banner/Banner"
 import bannerAbout from '../../assets/banner_about.png'
 import Collapse from "../../components/collapse/Collapse"
+import './about.scss'
+
 
 export default function About() {
     const aboutDatas = [
@@ -30,7 +32,10 @@ export default function About() {
 	return (
 		<div>
         <Header />
-        <Banner imageUrl={bannerAbout} showText={false} />
+		<main className="main">
+        <Banner imageUrl={bannerAbout} 
+		showText={false}
+		 />
         {aboutDatas.map(data => (
                <Collapse
                     key={data.id}
@@ -38,6 +43,7 @@ export default function About() {
                     content={data.content}
                 />
             ))}
+			</main>
         <Footer />
 		</div>
 	)
