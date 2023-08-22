@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 export default function Collapse({content, title}) {
     const [open, setOpen] = useState(false) // Local state to control whether Collapse is open or closed
     const toggleCollapse = () => {
-        setOpen(!open) //Collapse component with dynamic classes based on the "open" state
+        setOpen(!open) // Collapse component with dynamic classes based on the "open" state
 
     }
     return (
@@ -16,7 +16,16 @@ export default function Collapse({content, title}) {
             <img className={`arrow ${open ? 'open' : ''}`} src={arrow} alt="flèche" />
             </h3>
             <div className={`collapse_content ${open ? 'open' : ''}`}>
-                {content}
+              {Array.isArray(content) ? ( // show equipments by list
+                    <ul>
+                        {content.map((item, index) => (
+                            <li key={index}>{item}</li>
+                        ))}
+                    </ul>
+                ) : (
+                    content
+                )}
+                
             </div>
         </div>
     );

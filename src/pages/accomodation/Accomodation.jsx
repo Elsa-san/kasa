@@ -30,14 +30,8 @@ useEffect(() => {
 
 			<div className="accomodation_title">
 			<h1>{dataCurrentAccomodation[0].title}</h1>
-			<div className="accomodation_host">
-			<span>{name[0]}</span>
-			<span>{name[1]}</span>
-			<img className="picture" src={dataCurrentAccomodation[0].host.picture} alt="propriétaire de l'appartement" />
-            </div>
 			</div>
 			<p>{dataCurrentAccomodation[0].location}</p>
-			<div className="tag-container">
 			<div>
 			{dataCurrentAccomodation[0].tags.map((tag, index) => {
 			return (
@@ -45,6 +39,7 @@ useEffect(() => {
 				)
 			})}
 			 </div>
+			<div className="host-container">
 			<div className="stars"> {Array.from({ length: 5 }).map((_, index) => (
              <img
              key={index}
@@ -52,8 +47,14 @@ useEffect(() => {
              alt="star"/>
              ))}
 			 </div>
+			 <div className="accomodation_host">
+				<div className="host-info">
+               <span className="host-lastname">{name[0]}</span>
+                 <span className="host-firstname">{name[1]}</span>
+				 </div>
+				<img className="picture" src={dataCurrentAccomodation[0].host.picture} alt="propriétaire de l'appartement" />
+            </div>
 			</div>
-
 			<div className="accomodation-collapse">
 			<div className="accomodation-collapse_item">
 			<Collapse title={"Description"} content={dataCurrentAccomodation[0].description}/>
