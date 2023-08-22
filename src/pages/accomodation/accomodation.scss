@@ -7,8 +7,7 @@
     flex-direction: column;
 
     @include desktop {
-    margin-left: 100px;
-    margin-top: 50px;
+    margin: 50px 100px 0 100px;
 
     &_title {
         display: flex;

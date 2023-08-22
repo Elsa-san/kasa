@@ -1,11 +1,18 @@
+@import "../../sass/main.scss";
+
 .main {
     margin: 0 20px;
+    @include desktop {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
 
     &_collapse {
         margin: 20px auto;
     }
 
     .about-banner {
-        height: 223px
+        height: 223px;
     }
 }

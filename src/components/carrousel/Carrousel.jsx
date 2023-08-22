@@ -17,6 +17,7 @@ setCurrentIndex((currentIndex - 1 + imageSlider.length) % imageSlider.length)
   return (
  <section style={{backgroundImage : `url(${imageSlider[currentIndex]})`}} className='carrousel'>
             {imageSlider.length > 1 && 
+            // if the number of images > 1, then show the count and arrows
                 <>
                     <img 
                         className='carrousel_arrow_right' 
