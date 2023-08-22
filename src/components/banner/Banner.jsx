@@ -1,8 +1,8 @@
 import "./banner.scss"
 
-export default function Banner({ imageUrl, showText }) {
+export default function Banner({ imageUrl, showText, className}) {
     return(
-        <section className="banner"
+        <section className={`banner ${className}`}
         style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${imageUrl})`,
       }}>
