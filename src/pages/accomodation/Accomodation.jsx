@@ -27,7 +27,8 @@ useEffect(() => {
         <Header />
 		<main className="accomodation">
 			<Slider imageSlider={imageSlider}/>
-
+			<div className="info-container">
+				<div className="location-container">
 			<div className="accomodation_title">
 			<h1>{dataCurrentAccomodation[0].title}</h1>
 			</div>
@@ -38,6 +39,7 @@ useEffect(() => {
 				<button className="tag" key={index}>{tag}</button>
 				)
 			})}
+			 </div>
 			 </div>
 			<div className="host-container">
 			<div className="stars"> {Array.from({ length: 5 }).map((_, index) => (
@@ -54,6 +56,7 @@ useEffect(() => {
 				 </div>
 				<img className="picture" src={dataCurrentAccomodation[0].host.picture} alt="propriétaire de l'appartement" />
             </div>
+			</div>
 			</div>
 			<div className="accomodation-collapse">
 			<div className="accomodation-collapse_item">

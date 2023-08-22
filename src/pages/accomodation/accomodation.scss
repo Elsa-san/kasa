@@ -52,7 +52,7 @@
     margin-top: 20px;
     @include desktop {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: end;
 }
 }
@@ -81,6 +81,7 @@
 
             @include desktop {
                 margin-top: 0;
+                margin-bottom: 20px;
  }
         }
 
@@ -99,3 +100,15 @@ h1 {
     margin-right: 100px;
     
 }}
+
+.info-container {
+    @include desktop {
+     display: flex;
+     justify-content: space-between;
+    }
+}
+
+.location-container {
+    display: flex;
+    flex-direction: column;
+}
