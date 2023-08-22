@@ -2,9 +2,7 @@
 
 .collapse {
     background-color: $color-tertiary;
-    min-height: 30px;
     cursor: pointer;
-    z-index: 30;
     border-radius: 5px;
     max-width: 1223px;
 
@@ -15,15 +13,16 @@
     &_content {
             height: 0;
             opacity: 0;
+            visibility: hidden;
         }
     
         &.open {
             .collapse_content {
+                visibility: visible;
                 height: auto;
                 padding: 20px;
                 background-color: $color-tertiary;
                 color: $color-secondary;
-                max-height: 300px;
                 opacity: 1;
                 line-height: 24px;
                 transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
@@ -31,11 +30,6 @@
             }
         }
 
-    @include tablette {
-        margin-left: 20px;
-        margin-right: 20px;
-
-    }
 
     
     &_title {
@@ -47,7 +41,6 @@
         color: $color-primary;
         font-weight: 500;
         margin-bottom: 0;
-        margin-top: 20px;
 
         @include desktop {
                     min-height: 30px;
@@ -79,3 +72,4 @@
             }
 }
 }
+
