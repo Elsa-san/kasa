@@ -33,7 +33,8 @@ export default function About() {
 		<div>
         <Header />
 		<main className="main">
-        <Banner imageUrl={bannerAbout} 
+        <Banner className="about-banner"
+		imageUrl={bannerAbout} 
 		showText={false}
 		 />
         {aboutDatas.map(data => (
