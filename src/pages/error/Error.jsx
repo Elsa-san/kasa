@@ -1,6 +1,7 @@
 import Header from "../../components/header/Header"
 import Footer from "../../components/footer/Footer"
 import "./error.scss"
+// Importing the Link component from React Router to manage links
 import {Link} from 'react-router-dom'
 
 export default function Error() {
